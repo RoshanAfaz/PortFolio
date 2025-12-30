@@ -119,7 +119,7 @@ const Hero = () => {
 
       <div className="container mx-auto">
         <motion.div
-          className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12"
+          className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-6 md:gap-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -127,7 +127,7 @@ const Hero = () => {
           {/* Left Column: Photo */}
           <motion.div
             variants={itemVariants}
-            className="w-full md:w-1/3 flex justify-center md:justify-start mt-8 md:mt-24"
+            className="w-full md:w-1/3 flex justify-center md:justify-start mt-0 md:mt-24"
           >
             <motion.div
               className="relative w-full max-w-sm"
