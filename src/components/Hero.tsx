@@ -127,7 +127,7 @@ const Hero = () => {
           {/* Left Column: Photo */}
           <motion.div
             variants={itemVariants}
-            className="w-full md:w-1/3 flex justify-center md:justify-start mt-24"
+            className="w-full md:w-1/3 flex justify-center md:justify-start mt-8 md:mt-24"
           >
             <motion.div
               className="relative w-full max-w-sm"
