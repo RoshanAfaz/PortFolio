@@ -1,17 +1,45 @@
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Github, Video, Languages, BookOpen, Car } from "lucide-react";
+import { Github, ExternalLink, Zap, Globe, BookOpen, Car, Video, Languages } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
       title: "ParkEasy",
       description:
-        "A smart parking management system that streamlines the parking experience with real-time availability, automated booking, and seamless user management.",
-      tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Python"],
+        "A web application built using React and MongoDB that allows users to find and reserve parking slots based on real-time availability, reducing parking search time through an interactive booking interface.",
+      tech: ["React.js", "MongoDB", "Node.js", "Express.js", "Python"],
       github: "https://github.com/RoshanAfaz/ParkEasy",
       icon: Car,
       color: "from-purple-500 to-indigo-500",
+    },
+    {
+      title: "Student Management System",
+      description:
+        "A MERN Stack application built using React and MongoDB to manage student information through a simple interface. Features include student record management, attendance tracking, and organized data storage.",
+      tech: ["React.js", "MongoDB", "Node.js", "Express.js"],
+      github: "https://github.com/RoshanAfaz/StudentManagementSystem",
+      demo: "https://achieversacademy.vercel.app",
+      icon: BookOpen,
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "RequestHub",
+      description:
+        "A premium web application for streamlining internal organizational requests and approvals. Built using React and MongoDB, featuring Socket.io for real-time notifications and n8n automation.",
+      tech: ["React.js", "MongoDB", "Socket.io", "n8n", "Node.js"],
+      github: "https://github.com/RoshanAfaz/RequestHub",
+      icon: Zap,
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      title: "GIS-ChatBot (SpatialSense)",
+      description:
+        "A geospatial intelligence platform for advanced spatial analysis and predictive risk forecasting. Features Groq AI for natural language querying and Scikit-Learn for data-driven analytics.",
+      tech: ["React.js", "Flask", "Groq AI", "Scikit-Learn", "Python"],
+      github: "https://github.com/RoshanAfaz/GIS-ChatBot",
+      icon: Globe,
+      color: "from-green-500 to-emerald-500",
     },
     {
       title: "Video Dubbing Web Application",
@@ -20,7 +48,7 @@ const Projects = () => {
       tech: ["React.js", "Node.js", "Python", "MongoDB"],
       github: "https://github.com/RoshanAfaz/VideoDubbingWebApplication",
       icon: Video,
-      color: "from-orange-500 to-red-500",
+      color: "from-indigo-500 to-blue-500",
     },
     {
       title: "Language Translator App",
@@ -29,7 +57,7 @@ const Projects = () => {
       tech: ["Python", "Tkinter", "deep_translator"],
       github: "https://github.com/RoshanAfaz/languagetranslatorapp",
       icon: Languages,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-rose-500 to-orange-500",
     },
     {
       title: "LinguaLearn",
@@ -38,7 +66,7 @@ const Projects = () => {
       tech: ["React.js", "MongoDB", "Node.js", "Express.js"],
       github: "https://github.com/RoshanAfaz/LinguaLearn",
       icon: BookOpen,
-      color: "from-green-500 to-emerald-500",
+      color: "from-teal-500 to-emerald-500",
     },
   ];
 
@@ -123,7 +151,7 @@ const Projects = () => {
               <motion.div
                 key={project.title}
                 variants={cardVariants}
-                className="group bg-card rounded-2xl overflow-hidden shadow-card"
+                className="group bg-card rounded-2xl overflow-hidden shadow-card flex flex-col h-full"
                 whileHover={{
                   y: -12,
                   boxShadow: "var(--shadow-card-hover)",
@@ -162,7 +190,7 @@ const Projects = () => {
                 </motion.div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-display font-semibold text-lg text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
@@ -171,7 +199,7 @@ const Projects = () => {
                   </p>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                     {project.tech.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
@@ -192,23 +220,45 @@ const Projects = () => {
                   </div>
 
                   {/* Links */}
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      asChild
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                  <div className="flex gap-3 mt-4">
+                    <motion.div className="flex-1" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full gap-2 px-2"
+                        asChild
                       >
-                        <Github size={16} />
-                        View Code
-                      </a>
-                    </Button>
-                  </motion.div>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github size={16} />
+                          Code
+                        </a>
+                      </Button>
+                    </motion.div>
+                    
+                    {"demo" in project && project.demo && (
+                      <motion.div className="flex-1" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <Button
+                          variant="hero"
+                          size="sm"
+                          className="w-full gap-2 px-2"
+                          asChild
+                        >
+                          <a
+                            href={project.demo as string}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink size={16} />
+                            Demo
+                          </a>
+                        </Button>
+                      </motion.div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
