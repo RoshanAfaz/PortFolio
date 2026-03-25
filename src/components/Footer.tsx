@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Terminal } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,16 +13,11 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.p
-            className="text-muted-foreground text-sm flex items-center gap-1"
+            className="text-muted-foreground text-sm flex items-center gap-2"
             whileHover={{ scale: 1.02 }}
           >
-            Made with{" "}
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <Heart size={14} className="text-primary fill-primary" />
-            </motion.span>{" "}
+            Developed with{" "}
+            <Terminal size={14} className="text-primary" />{" "}
             by Roshan Afaz
           </motion.p>
           <p className="text-muted-foreground text-sm">

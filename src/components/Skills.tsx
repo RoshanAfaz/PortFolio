@@ -1,17 +1,21 @@
 import { motion, type Variants } from "framer-motion";
+import { Terminal, Library, Database } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
+      icon: Terminal,
       skills: ["C", "C++", "Python", "Java"],
     },
     {
       title: "Libraries & Frameworks",
+      icon: Library,
       skills: ["React.js", "Node.js", "Express.js"],
     },
     {
       title: "Databases",
+      icon: Database,
       skills: ["MySQL", "MongoDB"],
     },
   ];
@@ -116,9 +120,14 @@ const Skills = () => {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="font-display font-semibold text-lg text-foreground mb-6 pb-4 border-b border-border">
-                  {category.title}
-                </h3>
+                <div className="flex items-center gap-4 mb-6 pb-4 border-b border-border">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <category.icon size={24} />
+                  </div>
+                  <h3 className="font-display font-semibold text-lg text-foreground">
+                    {category.title}
+                  </h3>
+                </div>
                 <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div

@@ -242,8 +242,6 @@ const Hero = () => {
                   <a
                     href="/cv.pdf"
                     download="Roshan_Afaz_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <Download size={18} />
                     Download CV
