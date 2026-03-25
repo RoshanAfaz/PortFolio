@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Globe } from "lucide-react";
 
 const Contact = () => {
 
@@ -35,6 +35,11 @@ const Contact = () => {
       icon: Github,
       name: "GitHub",
       href: "https://github.com/RoshanAfaz",
+    },
+    {
+      icon: Globe,
+      name: "Portfolio",
+      href: "https://roshanafazportfolio.vercel.app",
     },
   ];
 
