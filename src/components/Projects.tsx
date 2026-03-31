@@ -29,6 +29,7 @@ const Projects = () => {
         "A premium web application for streamlining internal organizational requests and approvals. Built using React and MongoDB, featuring Socket.io for real-time notifications and n8n automation.",
       tech: ["React.js", "MongoDB", "Socket.io", "n8n", "Node.js"],
       github: "https://github.com/RoshanAfaz/RequestHub",
+      demo: "https://requesthubb.vercel.app",
       icon: Zap,
       color: "from-orange-500 to-red-500",
     },
